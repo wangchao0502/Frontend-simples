@@ -1,4 +1,4 @@
-# front-end-simples
+# A new website focus on FE knowledge
 
 ## Install
 
