@@ -38,6 +38,8 @@ pre {
     color: chartreuse;
     text-align: left;
     font-size: 0.8em;
+    word-break: break-all;
+    word-wrap: break-word;
     white-space: pre-wrap;
 }
 
@@ -76,7 +78,11 @@ article {
     -moz-border-radius: 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 10px -2px grey;
-    background-color: lightgoldenrodyellow;
+    /*background-color: lightgoldenrodyellow;*/
+    background-color: #f5f5d7;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3) 50%, transparent 50%, transparent);
+    background-size: 3em 3em;
+    background-origin: content-box;
 }
 
 /*强调的内容*/
