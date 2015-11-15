@@ -16,9 +16,11 @@
 .text-left {
     text-align: left;
 }
+
 .text-right {
     text-align: right;
 }
+
 .text-center {
     text-align: center;
 }
@@ -35,22 +37,20 @@ pre {
     background-color: black;
     color: chartreuse;
     text-align: left;
-    font-size: 80%;
+    font-size: 0.8em;
     white-space: pre-wrap;
 }
 
 /*用ul作为列表布局的时候，清空边距和内补*/
 ul.inline,
-ul.inlist
-{
+ul.inlist {
     margin: 0;
     padding: 0;
 }
 
 /*取消默认的列表装饰符号*/
 ul.inline li,
-ul.inlist li
-{
+ul.inlist li {
     list-style-type: none;
 }
 
@@ -88,13 +88,43 @@ strong.notice {
     color: red;
 }
 
+/*omg dynamic text*/
+@-webkit-keyframes breathe {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.omg-breathing {
+    -webkit-animation-timing-function: ease-in-out; /*动画时间曲线*/
+    -webkit-animation-name: breathe; /*动画名称，与@keyframes搭配使用*/
+    -webkit-animation-duration: 1600ms; /*动画持续时间*/
+    -webkit-animation-iteration-count: infinite; /*动画要重复次数*/
+    -webkit-animation-direction: alternate; /*动画执行方向，alternate 表示反复*/
+}
+
 /*definition list*/
-dl {  }
+dl {
+}
+
 dt {
     font-weight: bold;
     line-height: 1.4;
 }
+
 dd {
     margin-bottom: 6px;
-    font-size: 80%;
+    font-size: 0.8em;
+}
+
+/*code*/
+code {
+    margin: 0 3px;
+    padding: 2px 4px;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+    font-size: 0.8em;
 }
