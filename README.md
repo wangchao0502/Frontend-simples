@@ -11,4 +11,4 @@ npm install -g bower
 bower install
 node server.js
 ```
-Now, you can visit the website on your bower(support h5/css3) with url: `localhost:3000`
+Now, you can visit the website on your browser(support h5/css3) with url: `localhost:3000`
