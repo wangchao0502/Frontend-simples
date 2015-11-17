@@ -134,3 +134,19 @@ code {
     border-radius: 4px;
     font-size: 0.86em;
 }
+
+/*figure figcaption*/
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.86em;
+    line-height: 2;
+    counter-increment: figure;
+}
+
+figcaption:before {
+    content: 'Figure ' counter(figure) '. ';
+    font-weight: bold;
+}

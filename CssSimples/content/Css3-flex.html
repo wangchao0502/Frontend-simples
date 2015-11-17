@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3特性——flex布局</title>
+    <link rel="stylesheet" href="/CssSimples/css/common.css"/>
+    <style>
+        .flex {
+            display: flex;
+        }
+
+        #exp1-item1 {
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+        }
+
+        #exp1-item2 {
+            height: 200px;
+            width: 100px;
+            background-color: red;
+            color: white;
+        }
+
+        #exp1-item2 + span {
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>CSS3特性——flex布局</h1>
+    <small>--> <a href="http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/">w3c 官方文档 2015-05-14</a></small>
+    <article>
+        <p>flex布局：一个设置了display: flex |
+            inline-flex;的元素，就叫做伸缩容器。其内部的子元素称为伸缩项目，这些子元素使用伸缩布局模型来拍版。再已知这些名次的情况下，我们来通过实例感受下这种布局方式。</p>
+        <figure>
+            <img src="../image/flex-1.png" alt="flex结构"/>
+            <figcaption>flex容器结构示意图</figcaption>
+        </figure>
+        <dl>
+            <dt>main axis</dt>
+            <dd>The main axis of a flex container is the primary axis along which flex items are laid out. It extends in
+                the main dimension.
+            </dd>
+            <dt>main-start | main-end</dt>
+            <dd>The flex items are placed within the container starting on the main-start side and going toward the
+                main-end side.
+            </dd>
+            <dt>main size</dt>
+            <dd>A flex item’s width or height, whichever is in the main dimension, is the item’s main size. The flex
+                item’s main size property is either the width or height property, whichever is in the main dimension.
+            </dd>
+            <dt>cross axis</dt>
+            <dd>The axis perpendicular to the main axis is called the cross axis. It extends in the cross dimension.
+            </dd>
+            <dt>cross-start | cross-end</dt>
+            <dd>Flex lines are filled with items and placed into the container starting on the cross-start side of the
+                flex container and going toward the cross-end side.
+            </dd>
+            <dt>cross size</dt>
+            <dd>The width or height of a flex item, whichever is in the cross dimension, is the item’s cross size. The
+                cross size property is whichever of width or height that is in the cross dimension.
+            </dd>
+        </dl>
+    </article>
+
+    <h2>display: flex | inline-flex</h2>
+    <article>
+        <p>
+            flex容器为它的内容创建了一个flex format context，类似于BFC的效果，但是好处是不需要float元素，而且overflow属性已经自动的应用到flex containers里边。
+        </p>
+        <strong class="notice">注意：CSS的columns在伸缩容器上没有效果。float、clear和vertical-align在伸缩项目上没有效果。::first-line和::first-letter也失效。</strong>
+    </article>
+<pre>
+&lt;div class="flex">
+    &lt;!-- flex item: block child --&gt;
+    &lt;div id="exp1-item1"&gt;block&lt;/div&gt;
+    &lt;!-- flex item: floated element; floating is ignored --&gt;
+    &lt;div id="exp1-item2" style="float: left;"&gt;float&lt;/div&gt;
+    &lt;!-- flex item: anonymous block box around inline content --&gt;
+    anonymous item 3
+    &lt;!-- flex item: inline child --&gt;
+    &lt;span&gt;
+        item 4
+    &lt;/span&gt;
+&lt;/div&gt;
+</pre>
+    <div class="panel">
+        <div class="flex">
+            <!-- flex item: block child -->
+            <div id="exp1-item1">block</div>
+            <!-- flex item: floated element; floating is ignored -->
+            <div id="exp1-item2" style="float: left;">float没有效果</div>
+            <!-- flex item: anonymous block box around inline content -->
+            anonymous item 3
+            <!-- flex item: inline child -->
+            <span>
+                item 4
+            </span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
