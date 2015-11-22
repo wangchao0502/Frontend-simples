@@ -121,6 +121,33 @@ dt {
     line-height: 1.4;
 }
 
+dt:before,
+dt:after {
+    opacity: 0.5;
+}
+
+dt:before {
+    content: '「';
+
+}
+
+dt:after {
+    content: '」';
+}
+
+dt:hover {
+    font-weight: bold;
+    color: red;
+    transition: color .8s;
+}
+
+dt:hover:before,
+dt:hover:after {
+    color: red;
+    transition: color .8s, opacity .8s;
+    opacity: 1;
+}
+
 dd {
     margin-bottom: 6px;
     font-size: 0.86em;
@@ -150,3 +177,11 @@ figcaption:before {
     content: 'Figure ' counter(figure) '. ';
     font-weight: bold;
 }
+
+/*some sign*/
+.sign-up:before {
+    content: '➥';
+    font-size: 120%;
+    color: red;
+}
+
